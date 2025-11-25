@@ -7,7 +7,7 @@ SOURCE_DIR = src
 SRC := $(shell find $(SOURCE_DIR) -name '*.c')
 OBJ := $(addprefix $(BUILD_DIR)/, $(notdir $(SRC:.c=.o)))
 
-$(OBJ) : $(BUILD_DIR)
+$(OBJ) : | $(BUILD_DIR)
 
 $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
